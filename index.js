@@ -1,7 +1,14 @@
-function hasTargetSum(array, target) {
-  // Write your algorithm here
-}
-
+"use strict";
+const hasTargetSum = function (arr, target) {
+  const numbersObserverd = {};
+  for (const number of arr) {
+    // n steps
+    const val = target - number;
+    if (val in numbersObserverd) return true;
+    numbersObserverd[number] = true;
+  }
+  return false;
+};
 /* 
   Write the Big O time complexity of your function here
 */
